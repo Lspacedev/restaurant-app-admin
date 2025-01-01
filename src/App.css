@@ -1,0 +1,958 @@
+* {
+  font-family: "Poppins", serif;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.App {
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.Home {
+  flex: 1;
+  display: flex;
+  background-image: linear-gradient(
+      to right,
+      rgba(49, 46, 46, 0.8),
+      rgba(49, 46, 46, 0.8)
+    ),
+    url("/images/10252422_4357397.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.SideNav {
+  height: calc(100% - 200px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 200px;
+}
+
+.sideNavLink {
+  color: white;
+  background-color: rgb(12, 11, 11);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+  padding: 0px 15px 0px 0px;
+  margin: 25px 50px;
+  border-radius: 50px;
+  font-size: 1.3rem;
+}
+.sideNavLink .icon {
+  padding: 20px 15px;
+  border-radius: 50px;
+  margin: 0px;
+}
+.sideNavLink:hover {
+  background-color: rgb(241, 41, 74);
+  cursor: pointer;
+}
+.sideNavLink:hover .icon {
+  background-color: rgb(221, 23, 56);
+}
+.Main {
+  height: 100%;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-update-restaurant {
+  flex: 1;
+  background-color: rgb(12, 11, 11);
+  margin: 25px 450px 25px 0px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+}
+.add-update-restaurant div {
+  color: grey;
+  font-size: 1.2rem;
+}
+.add-update-restaurant button {
+  border: none;
+  outline: none;
+  background-color: rgb(241, 41, 74);
+  border-radius: 50px;
+  padding: 25px;
+}
+.add-update-restaurant button:hover {
+  background-color: rgb(221, 23, 56);
+  cursor: pointer;
+}
+
+.restaurant {
+  flex: 9;
+  background-color: rgb(12, 11, 11);
+  margin: 25px 0px;
+  border-radius: 50px;
+  padding: 50px 0px;
+}
+.Stats {
+  height: calc(100% - 200px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 200px;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(68, 68, 71, 0.6);
+  z-index: 2;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-close {
+  font-size: 2rem;
+  color: #e6e8e6;
+  cursor: pointer;
+}
+
+.CreateRestaurant {
+  margin: 0 auto 0 auto;
+  padding: 50px;
+  width: 1200px;
+  height: 900px;
+  overflow: hidden;
+  border-radius: 50px;
+  background-color: black;
+  overflow-y: scroll;
+}
+.CreateRestaurant .input {
+  margin: 25px 0px;
+}
+.CreateRestaurant h3 {
+  color: #e6e8e6;
+  font-size: 2rem;
+}
+.CreateRestaurant input,
+textarea,
+select {
+  width: 100%;
+  margin: 5px auto;
+  padding: 15px 0px;
+  background-color: black;
+  border: 0.1rem solid grey;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
+  color: #e6e8e6;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+.CreateRestaurant input:focus {
+  border: 1px solid #709bff;
+}
+.CreateRestaurant input:focus::placeholder {
+  color: #3772ff;
+}
+.CreateRestaurant label {
+  color: white;
+  margin: 25px 25px 25px 0px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.CreateRestaurant button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(241, 41, 74);
+  margin: 15px 0px;
+}
+
+.create-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CreateRestaurant label {
+  color: white;
+}
+
+.details h3 {
+  color: whitesmoke;
+  font-size: 2rem;
+  text-align: center;
+}
+.details h4 {
+  color: whitesmoke;
+  font-size: 1.4rem;
+}
+.image-address {
+  display: flex;
+}
+.address {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.address h4 {
+  color: whitesmoke;
+  font-size: 1.4rem;
+}
+.image-address .image {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image img {
+  width: 80%;
+  height: 70%;
+  border-radius: 50px;
+}
+.details {
+  padding: 15px 50px;
+}
+.text {
+  color: whitesmoke;
+}
+.line {
+  color: whitesmoke;
+}
+
+.days-hours {
+  display: flex;
+  justify-content: space-around;
+}
+
+.days-hours div {
+  width: fit-content;
+  padding: 50px 70px;
+  border-radius: 50px;
+  background-color: rgb(70, 70, 70);
+  border-left: 2px solid rgb(241, 41, 74);
+}
+
+.tags {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 250px;
+}
+.tag {
+  flex: 1;
+  color: whitesmoke;
+  width: fit-content;
+  padding: 15px;
+  border-radius: 50px;
+  background-color: rgb(70, 70, 70);
+  border-left: 2px solid rgb(241, 41, 74);
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.item {
+  flex: 1;
+  color: whitesmoke;
+  padding: 45px;
+  border-radius: 50px;
+  background-color: rgb(70, 70, 70);
+  border-left: 2px solid rgb(241, 41, 74);
+}
+
+.UpdateRestaurant {
+  margin: 0 auto 0 auto;
+  padding: 50px;
+  width: 1200px;
+  height: 900px;
+  overflow: hidden;
+  border-radius: 50px;
+  background-color: black;
+  overflow-y: scroll;
+}
+.UpdateRestaurant .input {
+  margin: 25px 0px;
+}
+.UpdateRestaurant h3 {
+  color: #e6e8e6;
+  font-size: 2rem;
+}
+.UpdateRestaurant input,
+textarea,
+select {
+  width: 100%;
+  margin: 5px auto;
+  padding: 15px 0px;
+  background-color: black;
+  border: 0.1rem solid grey;
+  outline: none;
+  border-radius: 5px;
+  padding: 15px 0 15px 20px;
+  box-sizing: border-box;
+  color: #e6e8e6;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+.UpdateRestaurant input:focus {
+  border: 1px solid #709bff;
+}
+.UpdateRestaurant input:focus::placeholder {
+  color: #3772ff;
+}
+.UpdateRestaurant button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: rgb(241, 41, 74);
+  margin: 15px 0px;
+}
+
+.create-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.UpdateRestaurant label {
+  color: white;
+  margin: 25px 25px 25px 0px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.update.tags {
+  overflow-x: scroll;
+  margin: 25px 0px;
+}
+.update.tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.update.menu {
+  overflow-x: scroll;
+  margin: 25px 0px;
+}
+.update.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notifs {
+  position: relative;
+  cursor: pointer;
+}
+
+.notifs span {
+  color: rgb(241, 41, 74);
+  font-weight: 600;
+  position: absolute;
+}
+
+.notifications {
+  margin: 0 auto 0 auto;
+  padding: 50px;
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 50px;
+  background-color: black;
+  overflow-y: scroll;
+}
+
+.notifs-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.notification {
+  overflow-y: scroll;
+}
+.notification {
+  color: white;
+  background-color: rgba(34, 32, 32, 0.8);
+  padding: 15px;
+  border-radius: 25px;
+  margin: 15px 0px;
+}
+
+.Reservations {
+  height: 98%;
+  flex: 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: rgb(12, 11, 11);
+  border-radius: 50px;
+  margin: 15px 0px;
+}
+.Reservations h5 {
+  background-color: rgb(70, 70, 70);
+  padding: 15px 50px;
+  margin: 15px 0px;
+  border-radius: 50px;
+}
+
+.reservations-div {
+  flex: 1;
+  margin: 15px 25px;
+}
+
+.ReservationCard {
+  width: 80%;
+  padding: 20px;
+  background-color: rgb(216, 216, 216);
+  border-radius: 15px;
+}
+.v-btn {
+  text-align: end;
+  margin: 15px;
+}
+.v-btn button {
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  background-color: rgb(241, 41, 74);
+  margin: 0px 5px;
+  cursor: pointer;
+}
+.ReservationCard p {
+  margin: 0px;
+  padding: 0px;
+}
+.ReservationCard h8 {
+  margin: 0px;
+  padding: 0px;
+}
+.checkin-out,
+.status-date {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+.checkin-out div {
+  margin: 0px;
+}
+.status-date div {
+  margin: 0px;
+}
+
+.History {
+  height: 90%;
+  flex: 3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  background-color: rgb(12, 11, 11);
+  border-radius: 50px;
+  margin: 15px 0px;
+}
+.History .notifications {
+  height: 100%;
+  width: 100%;
+}
+.Reviews {
+  height: 98%;
+  flex: 3;
+
+  background-color: rgb(12, 11, 11);
+  border-radius: 50px;
+  margin: 15px 0px;
+}
+
+.Reviews h3 {
+  color: white;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.reviews-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.ReviewCard {
+  width: 90%;
+  display: flex;
+  gap: 15px;
+  background-color: rgba(34, 32, 32, 0.8);
+  border-radius: 25px;
+  margin: 25px 0px;
+  color: white;
+  justify-content: space-evenly;
+}
+
+.profile-pic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.profile-pic .text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: flex;
+  gap: 15px;
+}
+
+.Profile {
+  height: 95%;
+  flex: 3;
+  background-color: rgb(12, 11, 11);
+  border-radius: 50px;
+  margin: 15px 0px;
+  text-align: center;
+  color: white;
+}
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+}
+.profile-content {
+  padding: 15px 0px;
+}
+.profile-content .content h4 {
+  font-size: 1.7rem;
+}
+
+.profile-content .content div {
+  font-size: 1.7rem;
+}
+
+.Profile input {
+  width: 40%;
+  padding: 15px;
+  background-color: rgba(34, 32, 32, 0.8);
+  color: white;
+  font-size: 1.3rem;
+  border: none;
+  outline: none;
+}
+
+.Profile button {
+  padding: 15px 45px;
+  border: none;
+  outline: none;
+  margin: 45px;
+}
+
+.stats-info {
+  display: flex;
+}
+
+.stats-info .pending {
+  padding: 25px 40px;
+  border: 5px solid orange;
+  color: white;
+  border-radius: 50px;
+}
+
+.stats-info .approved {
+  padding: 25px 40px;
+  border: 5px solid green;
+  color: white;
+  border-radius: 50px;
+}
+.stats-info .rejected {
+  padding: 25px 40px;
+  border: 5px solid red;
+  color: white;
+  border-radius: 50px;
+}
+.landing {
+  height: inherit;
+  width: 100%;
+  text-align: center;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-content {
+  height: 100%;
+  display: flex;
+  background-image: linear-gradient(
+      to right,
+      rgba(49, 46, 46, 0.3),
+      rgba(49, 46, 46, 0.6)
+    ),
+    url("/images/pexels-evonics-1058277.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.landing-info {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.landing-img {
+  flex: 50%;
+
+  background-color: gray;
+}
+
+.landing-img img {
+  height: 100%;
+  width: 100%;
+}
+.landing-title {
+  font-size: 5rem;
+  margin: 0px 450px;
+  font-weight: bold;
+
+  color: white;
+}
+.landing-subtitle {
+  font-size: 2.5rem;
+
+  color: whitesmoke;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(12, 11, 11);
+  padding: 25px 15px;
+}
+
+.logo-land {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin: 15px;
+}
+
+.login-register {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.login-btn {
+  font-size: 1.2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+.login-btn:hover {
+  border: 1px solid white;
+}
+.register-btn {
+  background-color: rgb(241, 41, 74);
+  color: white;
+  font-weight: bold;
+  border-radius: 7px;
+
+  margin-right: 10px;
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  cursor: pointer;
+}
+
+.register-btn2 {
+  background-color: rgb(241, 41, 74);
+  color: white;
+  font-weight: bold;
+  padding: 20px 30px;
+  margin: 20px;
+  border-radius: 8px;
+  border: none;
+}
+
+.register-btn:hover {
+  background-color: rgb(221, 23, 56);
+}
+
+.register-btn2:hover {
+  background-color: rgb(221, 23, 56);
+}
+
+.Login {
+  width: 100%;
+  display: flex;
+}
+
+.login-to-register p {
+  color: #1e2f23;
+  cursor: pointer;
+}
+
+.login-to-register p:hover {
+  color: #34632f;
+}
+
+.login-form-container {
+  flex: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login form {
+  margin: 50px auto;
+  padding: 25px 0px;
+  width: 60%;
+}
+.Login input,
+textarea,
+select {
+  outline: none;
+  border: 1px solid #bbb;
+
+  margin: 15px 0;
+  padding: 5px 0px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  display: inline-block;
+}
+.Login form div label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  cursor: pointer;
+}
+
+.Login input[type="submit"] {
+  margin: 5px 0px;
+  background-color: #1e2f23;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.Login input[type="submit"]:hover {
+  background-color: #34632f;
+}
+
+.login-img {
+  flex: 50%;
+}
+
+.login-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.Register {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.register-to-login {
+  font-size: 0.7rem;
+  display: flex;
+}
+.register-to-login p {
+  color: #1e2f23;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.register-to-login p:hover {
+  color: #34632f;
+}
+
+.register-form-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(49, 46, 46, 0.8),
+      rgba(49, 46, 46, 0.8)
+    ),
+    url("/images/10252422_4357397.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register-form-container h3 {
+  color: white;
+}
+
+.Register .form {
+  margin: 0px auto;
+  padding: 45px 10px;
+  width: 30%;
+  background-color: #0f0f09;
+  border-radius: 50px;
+}
+.Register input,
+textarea,
+select {
+  outline: none;
+  border: 1px solid #bbb;
+
+  margin: 15px 0px 5px 0px;
+  padding: 5px 0px;
+  width: 90%;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  outline: none;
+  border-radius: 10px;
+  display: inline-block;
+}
+.Register .form div label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  cursor: pointer;
+}
+
+.Register button {
+  margin: 5px 0px;
+  padding: 10px;
+  background-color: rgb(241, 41, 74);
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+.Register input[type="submit"]:hover {
+  background-color: rgb(221, 23, 56);
+}
+
+.Login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.login-to-login {
+  font-size: 0.7rem;
+  display: flex;
+}
+.login-to-login p {
+  color: #1e2f23;
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+.login-to-login p:hover {
+  color: #34632f;
+}
+
+.login-form-container {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to right,
+      rgba(49, 46, 46, 0.8),
+      rgba(49, 46, 46, 0.8)
+    ),
+    url("/images/10252422_4357397.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-form-container h3 {
+  color: white;
+}
+
+.Login .form {
+  margin: 0px auto;
+  padding: 45px 10px;
+  width: 30%;
+  background-color: #0f0f09;
+  border-radius: 50px;
+}
+.Login input,
+textarea,
+select {
+  outline: none;
+  border: 1px solid #bbb;
+
+  margin: 15px 0px 5px 0px;
+  padding: 5px 0px;
+  width: 90%;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  outline: none;
+  border-radius: 10px;
+  display: inline-block;
+}
+.Login .form div label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: rgb(133, 133, 133);
+  cursor: pointer;
+}
+
+.Login button {
+  margin: 5px 0px;
+  padding: 10px;
+  background-color: rgb(241, 41, 74);
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 90%;
+  font-size: 1.2rem;
+  border-radius: 25px;
+}
+.Login input[type="submit"]:hover {
+  background-color: rgb(221, 23, 56);
+}
