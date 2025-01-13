@@ -13,6 +13,8 @@ body {
   flex-direction: column;
 }
 .Home {
+  width: 100vw;
+
   flex: 1;
   display: flex;
   background-image: linear-gradient(
