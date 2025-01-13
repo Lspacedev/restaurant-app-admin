@@ -122,6 +122,7 @@ function CreateRestaurant({ closeForm }) {
       }
     } catch (error) {
       console.log(error);
+      closeForm();
     }
   }
   return (
