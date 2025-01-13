@@ -23,8 +23,8 @@ function ReviewCard({ review }) {
         </p>
       </div>
       <div className="review-text">
-        <p>{review.text}</p>
-        <p>{new Date(review.createdAt).toDateString()}</p>
+        <p className="text">{review.text}</p>
+        <p className="time">{new Date(review.createdAt).toDateString()}</p>
       </div>
     </div>
   );

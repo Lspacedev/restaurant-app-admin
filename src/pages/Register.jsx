@@ -24,7 +24,7 @@ function Register() {
   async function handleSubmit() {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/register", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,6 +41,7 @@ function Register() {
       setLoading(false);
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   }
   return (
@@ -50,12 +51,18 @@ function Register() {
           <>
             <div className="form">
               <h3>Create your account</h3>
-
+              {errors &&
+                errors.length > 0 &&
+                errors.map((err, i) => (
+                  <span key={i} className="err">
+                    {err.msg}
+                  </span>
+                ))}
               <input
                 type="name"
                 id="name"
                 name="name"
-                placeholder="name"
+                placeholder="Name"
                 onChange={(e) => handleInputChange(e)}
               />
               <br />

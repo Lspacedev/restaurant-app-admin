@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import { CgClose } from "react-icons/cg";
 
 function CreateRestaurant({ closeForm }) {
@@ -22,6 +24,8 @@ function CreateRestaurant({ closeForm }) {
 
   const [image, setImage] = useState();
   const token = localStorage.getItem("token");
+  const navigation = useNavigate();
+
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
@@ -101,16 +105,19 @@ function CreateRestaurant({ closeForm }) {
       formData.append("tags", JSON.stringify(obj.tags));
       formData.append("menu", JSON.stringify(obj.menu));
       formData.append("image", image);
-      const response = await fetch("http://localhost:3000/api/restaurants", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        }
+      );
       const data = await response.json();
       if (response.ok === true) {
-        //navigation(0);
+        navigation(0);
         closeForm();
       }
     } catch (error) {

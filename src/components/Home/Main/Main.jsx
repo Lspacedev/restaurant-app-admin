@@ -24,13 +24,16 @@ function Main() {
   }, []);
   async function fetchRestaurant() {
     try {
-      const res = await fetch(`http://localhost:3000/api/restaurant`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_PROD_URL}/api/restaurant`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       const data = await res.json();
       if (res.ok === true) {
         if (data.length > 0) {
@@ -46,7 +49,7 @@ function Main() {
   }
   async function fetchProfile() {
     try {
-      const res = await fetch(`http://localhost:3000/api/profile`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -126,7 +129,16 @@ function Main() {
       </div>
       <div className="restaurant">
         {loading ? (
-          <div style={{ display: "flex", color: "white" }}>Loading...</div>
+          <div
+            style={{
+              flex: 3,
+              display: "flex",
+              color: "white",
+              justifyContent: "center",
+            }}
+          >
+            Loading...
+          </div>
         ) : JSON.stringify(restaurant) !== "{}" ? (
           <>
             <div className="details">

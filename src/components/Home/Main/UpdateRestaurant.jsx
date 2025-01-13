@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+
 import { CgClose } from "react-icons/cg";
 
 function UpdateRestaurant({ closeForm, restaurant }) {
@@ -22,6 +24,8 @@ function UpdateRestaurant({ closeForm, restaurant }) {
 
   const [image, setImage] = useState();
   const token = localStorage.getItem("token");
+  const navigation = useNavigate();
+
   function handleChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
@@ -94,7 +98,7 @@ function UpdateRestaurant({ closeForm, restaurant }) {
       }
 
       const response = await fetch(
-        `http://localhost:3000/api/restaurants/${restaurant._id}`,
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants/${restaurant._id}`,
         {
           method: "PUT",
           headers: {
@@ -106,7 +110,7 @@ function UpdateRestaurant({ closeForm, restaurant }) {
       );
       const data = await response.json();
       if (response.ok === true) {
-        //navigation(0);
+        navigation(0);
         closeForm();
       }
     } catch (error) {

@@ -15,7 +15,7 @@ function Stats() {
   async function fetchBookings() {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/restaurants/` +
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
           JSON.parse(resId) +
           "/bookings",
         {
@@ -55,7 +55,11 @@ function Stats() {
     }
   }
   if (loading)
-    return <div style={{ flex: 3, display: "flex" }}>Loading...</div>;
+    return (
+      <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+        Loading...
+      </div>
+    );
   return (
     <div className="Stats">
       {data.length > 0 ? (
@@ -65,9 +69,9 @@ function Stats() {
           No data to display
         </div>
       )}
+      {/* <div className="reservs">{data.length}</div> */}
 
       <div className="stats-info">
-        <div className="reservs">{data.length}</div>
         <div className="pending">Pending</div>
         <div className="approved">Approved</div>
         <div className="rejected">Rejected</div>

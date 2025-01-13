@@ -12,7 +12,7 @@ function Reviews() {
   async function fetchReviews() {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/restaurants/` +
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
           JSON.parse(resId) +
           "/reviews",
         {

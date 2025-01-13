@@ -20,7 +20,7 @@ function Login() {
   async function handleSubmit() {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3000/api/login", {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,18 +28,19 @@ function Login() {
         body: JSON.stringify(obj),
       });
       const data = await res.json();
-      if (typeof data.errors !== "undefined") {
-        setErrors(data.errors);
-      } else {
+      if (res.ok) {
         alert(data.message);
         localStorage.setItem("token", data.token);
         localStorage.setItem("userId", data.userId);
+        navigation("/home");
+      } else {
+        alert(data.message);
       }
 
       setLoading(false);
-      navigation("/home");
     } catch (err) {
       console.log(err);
+      setLoading(false);
     }
   }
   return (

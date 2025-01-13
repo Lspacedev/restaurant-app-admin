@@ -17,7 +17,7 @@ function Reservations() {
   async function fetchBookings() {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/restaurants/` +
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
           JSON.parse(resId) +
           "/bookings",
         {
@@ -35,45 +35,60 @@ function Reservations() {
       setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   }
-  if (loading)
-    return <div style={{ flex: 3, display: "flex" }}>Loading...</div>;
+
   return (
     <div className="Reservations">
-      <div className="pending-section reservations-div">
-        <h5>Pending</h5>
-        {typeof bookings !== "undefined" &&
-          bookings.length > 0 &&
-          bookings.map(
-            (booking, i) =>
-              booking.status === "pending" && (
-                <ReservationCard key={i} booking={booking} />
-              )
-          )}
-      </div>
-      <div className="approved-section reservations-div">
-        <h5>Approved</h5>
-        {typeof bookings !== "undefined" &&
-          bookings.length > 0 &&
-          bookings.map(
-            (booking, i) =>
-              booking.status === "approved" && (
-                <ReservationCard key={i} booking={booking} />
-              )
-          )}
-      </div>
-      <div className="cancelled-section reservations-div">
-        <h5>Rejected</h5>
-        {typeof bookings !== "undefined" &&
-          bookings.length > 0 &&
-          bookings.map(
-            (booking, i) =>
-              booking.status === "rejected" && (
-                <ReservationCard key={i} booking={booking} />
-              )
-          )}
-      </div>
+      {loading ? (
+        <div
+          style={{
+            flex: 3,
+            display: "flex",
+            justifyContent: "center",
+            color: "white",
+          }}
+        >
+          Loading...
+        </div>
+      ) : (
+        <>
+          <div className="pending-section reservations-div">
+            <h5>Pending</h5>
+            {typeof bookings !== "undefined" &&
+              bookings.length > 0 &&
+              bookings.map(
+                (booking, i) =>
+                  booking.status === "pending" && (
+                    <ReservationCard key={i} booking={booking} />
+                  )
+              )}
+          </div>
+          <div className="approved-section reservations-div">
+            <h5>Approved</h5>
+            {typeof bookings !== "undefined" &&
+              bookings.length > 0 &&
+              bookings.map(
+                (booking, i) =>
+                  booking.status === "approved" && (
+                    <ReservationCard key={i} booking={booking} />
+                  )
+              )}
+          </div>
+          <div className="cancelled-section reservations-div">
+            <h5>Rejected</h5>
+            {typeof bookings !== "undefined" &&
+              bookings.length > 0 &&
+              bookings.map(
+                (booking, i) =>
+                  booking.status === "rejected" && (
+                    <ReservationCard key={i} booking={booking} />
+                  )
+              )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

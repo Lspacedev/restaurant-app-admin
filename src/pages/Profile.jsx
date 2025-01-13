@@ -18,11 +18,11 @@ function Profile() {
   }, []);
   async function handleSubmit() {
     try {
-      const res = await fetch(`http://localhost:3000/api/profile`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Nzc0MjAzMGQ5NzkyY2QxYjA2ODZiOWMiLCJlbWFpbCI6InRzcEBtcGcuY29tIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzM1NzE4ODg4LCJleHAiOjE3MzU3Mjk2ODh9.mNunqhtoiRtWYfCYJZ7dm5bo6RETGLvXeTG069JjE0Q`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(userUpdate),
       });
@@ -44,7 +44,7 @@ function Profile() {
   }
   async function fetchProfile() {
     try {
-      const res = await fetch(`http://localhost:3000/api/profile`, {
+      const res = await fetch(`${import.meta.env.VITE_PROD_URL}/api/profile`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

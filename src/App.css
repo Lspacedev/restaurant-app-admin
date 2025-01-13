@@ -8,7 +8,7 @@ body {
 
 .App {
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
@@ -142,6 +142,11 @@ body {
   border-radius: 50px;
   background-color: black;
   overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.CreateRestaurant::-webkit-scrollbar {
+  display: none;
 }
 .CreateRestaurant .input {
   margin: 25px 0px;
@@ -250,9 +255,9 @@ select {
 
 .days-hours div {
   width: fit-content;
-  padding: 50px 70px;
+  padding: 25px 70px;
   border-radius: 50px;
-  background-color: rgb(70, 70, 70);
+  background-color: #0f0f09;
   border-left: 2px solid rgb(241, 41, 74);
 }
 
@@ -267,7 +272,7 @@ select {
   width: fit-content;
   padding: 15px;
   border-radius: 50px;
-  background-color: rgb(70, 70, 70);
+  background-color: #0f0f09;
   border-left: 2px solid rgb(241, 41, 74);
 }
 
@@ -280,9 +285,9 @@ select {
 .item {
   flex: 1;
   color: whitesmoke;
-  padding: 45px;
+  padding: 15px;
   border-radius: 50px;
-  background-color: rgb(70, 70, 70);
+  background-color: #0f0f09;
   border-left: 2px solid rgb(241, 41, 74);
 }
 
@@ -290,11 +295,15 @@ select {
   margin: 0 auto 0 auto;
   padding: 50px;
   width: 1200px;
-  height: 900px;
-  overflow: hidden;
+  height: calc(100vh - 150px);
   border-radius: 50px;
   background-color: black;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.UpdateRestaurant::-webkit-scrollbar {
+  display: none;
 }
 .UpdateRestaurant .input {
   margin: 25px 0px;
@@ -349,8 +358,9 @@ select {
   font-weight: 500;
 }
 .update.tags {
-  overflow-x: scroll;
+  overflow-x: auto;
   margin: 25px 0px;
+  padding: 10px 0px;
 }
 .update.tag {
   display: flex;
@@ -358,8 +368,9 @@ select {
   align-items: center;
 }
 .update.menu {
-  overflow-x: scroll;
+  overflow-x: auto;
   margin: 25px 0px;
+  padding: 10px 0px;
 }
 .update.item {
   display: flex;
@@ -382,10 +393,9 @@ select {
   padding: 50px;
   width: 800px;
   height: 600px;
-  overflow: hidden;
+  overflow-y: auto;
   border-radius: 50px;
   background-color: black;
-  overflow-y: scroll;
 }
 
 .notifs-nav {
@@ -393,9 +403,7 @@ select {
   align-items: center;
   gap: 25px;
 }
-.notification {
-  overflow-y: scroll;
-}
+
 .notification {
   color: white;
   background-color: rgba(34, 32, 32, 0.8);
@@ -499,8 +507,9 @@ select {
   justify-content: space-evenly;
 }
 .ReviewCard {
-  width: 90%;
+  width: 60%;
   display: flex;
+  align-items: center;
   gap: 15px;
   background-color: rgba(34, 32, 32, 0.8);
   border-radius: 25px;
@@ -508,7 +517,25 @@ select {
   color: white;
   justify-content: space-evenly;
 }
-
+.rating {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  padding: 15px;
+}
+.review-text {
+  flex: 3;
+  display: flex;
+  gap: 5px;
+}
+.review-text .text {
+  flex: 2;
+}
+.review-text .time {
+  flex: 1;
+  padding: 15px;
+}
 .profile-pic {
   display: flex;
   flex-direction: column;
@@ -563,13 +590,22 @@ select {
   font-size: 1.3rem;
   border: none;
   outline: none;
+  box-sizing: border-box;
 }
 
 .Profile button {
   padding: 15px 45px;
+  width: 40%;
+
   border: none;
   outline: none;
-  margin: 45px;
+  margin: 45px 0px;
+  background-color: rgba(63, 62, 62, 0.945);
+  color: white;
+}
+.Profile button:hover {
+  background-color: rgb(221, 23, 56);
+  cursor: pointer;
 }
 
 .stats-info {
@@ -599,7 +635,6 @@ select {
   height: inherit;
   width: 100%;
   text-align: center;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
@@ -787,6 +822,12 @@ select {
   width: 100%;
   height: 100%;
   display: flex;
+}
+.Register .err {
+  color: red;
+  font-size: 0.7rem;
+  margin: 0px;
+  padding: 0px;
 }
 .register-to-login {
   font-size: 0.7rem;
