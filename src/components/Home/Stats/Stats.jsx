@@ -60,9 +60,10 @@ function Stats() {
         Loading...
       </div>
     );
+  console.log(data);
   return (
     <div className="Stats">
-      {data.length > 0 ? (
+      {data && data.length > 0 ? (
         <Chart data={data} />
       ) : (
         <div style={{ fontSize: "2rem", color: "white", margin: "25px 0px" }}>
