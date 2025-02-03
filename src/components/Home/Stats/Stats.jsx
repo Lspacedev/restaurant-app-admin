@@ -26,6 +26,14 @@ function Stats() {
           },
         }
       );
+      console.log(
+        "tetre",
+        `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
+          JSON.parse(resId) +
+          "/bookings",
+        res
+      );
+
       const data = await res.json();
       if (res.ok === true) {
         if (data.bookings.length > 0) {
