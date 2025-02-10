@@ -1061,6 +1061,9 @@ select {
     padding: 0px;
     margin: 5px;
   }
+  .login-to-register {
+    flex-direction: column;
+  }
 }
 @media (max-width: 1280px) {
   .Home {
