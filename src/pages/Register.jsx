@@ -44,6 +44,9 @@ function Register() {
       setLoading(false);
     }
   }
+  function handleNavigateLogin() {
+    navigation("/login");
+  }
   return (
     <div className="Register">
       <div className="register-form-container">
@@ -100,6 +103,10 @@ function Register() {
 
               <br />
               <button onClick={handleSubmit}>Submit</button>
+              <div className="login-to-register">
+                Already have an account?
+                <p onClick={handleNavigateLogin}>Login here</p>
+              </div>
             </div>
           </>
         ) : (

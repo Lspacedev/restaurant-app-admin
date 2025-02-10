@@ -21,7 +21,7 @@ function Landing() {
             Manage your restaurant reservations, all in one place.
           </div>
           <div className="landing-subtitle">Trusted by many.</div>
-          <Link to="/registration">
+          <Link to="/register">
             <button className="register-btn2">Register Now</button>
           </Link>
         </div>

@@ -978,7 +978,7 @@ select {
   border: 1px solid #bbb;
 
   margin: 15px 0px 5px 0px;
-  padding: 5px 0px;
+  padding: 5px;
   width: 90%;
   font-size: 1.2rem;
   border-radius: 25px;
@@ -1021,6 +1021,22 @@ select {
 
 
 } */
+.login-to-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: gray;
+}
+.login-to-register p {
+  color: #bbb;
+  cursor: pointer;
+}
+
+.login-to-register p:hover {
+  color: rgb(221, 23, 56);
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .stats-info .pending {
     padding: 5px;
