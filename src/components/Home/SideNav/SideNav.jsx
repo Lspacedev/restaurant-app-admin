@@ -26,7 +26,6 @@ function SideNav() {
         },
       });
       const data = await res.json();
-      console.log({ data });
       if (res.ok === true) {
         setUser(data);
       }
@@ -54,6 +53,8 @@ function SideNav() {
   function logout() {
     localStorage.removeItem("userId");
     localStorage.removeItem("token");
+    localStorage.removeItem("resId");
+
     navigation("/");
   }
 

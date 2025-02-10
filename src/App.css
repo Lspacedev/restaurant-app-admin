@@ -101,7 +101,8 @@ body,
 
 .restaurant {
   flex: 9;
-  background-color: rgb(12, 11, 11);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(4px);
   margin: 25px 0px;
   border-radius: 50px;
   padding: 50px 0px;
@@ -547,12 +548,15 @@ select {
   align-items: center;
   cursor: pointer;
 }
+
 .profile-pic img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
 }
-
+.profile-pic img:hover {
+  box-shadow: 6px 6px 15px #130505;
+}
 .profile-pic .text {
   font-size: 1.6rem;
   font-weight: 600;

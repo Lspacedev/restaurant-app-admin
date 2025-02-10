@@ -6,6 +6,10 @@ A restaurant management app where restaurant owners can add and manage their res
 
 [https://github.com/Lspacedev/restaurant-app-backend](https://github.com/Lspacedev/restaurant-app-backend)
 
+### Restaurant App | LIVE
+
+[LIVE](https://restaurant-app-admin.vercel.app/)
+
 ## Prerequisites
 
 - ReactJs
@@ -82,7 +86,7 @@ Photo by Marcus Herzberg: https://www.pexels.com/photo/group-of-people-gathering
 
 ```
 
-## Flows:
+## Moodboard:
 
 ```python
 https://www.figma.com/design/Eer26qnAZHm183H81sF8a6/Restaurant-App-Design?node-id=0-1&t=FHhDdAROfPZq47Sd-1

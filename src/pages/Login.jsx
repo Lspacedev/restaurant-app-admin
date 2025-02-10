@@ -31,7 +31,6 @@ function Login() {
       if (res.ok) {
         alert(data.message);
         localStorage.setItem("token", data.token);
-        localStorage.setItem("userId", data.userId);
         navigation("/home");
       } else {
         alert(data.message);

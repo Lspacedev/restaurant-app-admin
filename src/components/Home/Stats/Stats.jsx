@@ -6,18 +6,14 @@ function Stats() {
   const [data, setData] = useState([]);
 
   const [loading, setLoading] = useState(true);
-  const resId = localStorage.getItem("resId");
   const token = localStorage.getItem("token");
-
   useEffect(() => {
-    fetchBookings();
+    fetchRestaurant();
   }, []);
-  async function fetchBookings() {
+  async function fetchRestaurant() {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
-          JSON.parse(resId) +
-          "/bookings",
+        `${import.meta.env.VITE_PROD_URL}/api/restaurant`,
         {
           method: "GET",
           headers: {
@@ -26,12 +22,29 @@ function Stats() {
           },
         }
       );
-      console.log(
-        "tetre",
+      const data = await res.json();
+      if (res.ok === true) {
+        if (data.length > 0) {
+          fetchBookings(data[0]._id);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function fetchBookings(resId) {
+    try {
+      const res = await fetch(
         `${import.meta.env.VITE_PROD_URL}/api/restaurants/` +
-          JSON.parse(resId) +
+          resId +
           "/bookings",
-        res
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       const data = await res.json();
@@ -55,20 +68,25 @@ function Stats() {
           });
           setData(arr);
         }
-        setBookings(data.bookings);
       }
-      setLoading(false);
     } catch (error) {
       console.log(error);
     }
+    setLoading(false);
   }
   if (loading)
     return (
-      <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         Loading...
       </div>
     );
-  console.log(data);
   return (
     <div className="Stats">
       {data && data.length > 0 ? (

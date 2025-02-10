@@ -1,0 +1,75 @@
+#Restaurant Booking Admin
+
+Problem: Create an app that allows restaurant admins to manage their restaurants.
+    It should have the following pages:
+    1. Login Page
+    2. Registration Page
+    3. Landing Page
+    4. Admin Profile Page
+    5. Reservations Page.
+    6. Reviews Page.
+    7. History Page
+
+
+Requirements: 
+    Registration information:
+    1. Name.
+    2. Surname.
+    3. Email.
+    4. Password.
+    5. Confirm Password.
+    6. Role. 
+
+    Admin interface:
+    1. Allow admin to view, add, update restaurant information.
+    2. The admin should be able to view and update their details - Profile Page.
+    3. Use protected routing - authentication.
+
+    Restaurant inputs:
+    1. Name.
+    2. Address.
+    3. About.
+    4. Phone.
+    5. Days.
+    6. Hours.
+    7. Menu.
+    8. Tags.
+
+    Features:
+  
+    Admin must be able to:
+    1. Add their restaurant.
+    2. View added restaurant.
+    3. Update added restaurant.
+    4. Delete restaurant.
+
+    5. Approve reservations.
+    6. Cancel reservations.
+
+    
+Solution: 
+    1. Create Registration Page to gather admin login credentials.
+    2. Store admin data to MongoDB database.
+    3. Create Login Page to access Admin Dashboard using registered email and password, after validation.
+    4. Use email and other user info to render Profile Page.
+    5. Create Landing Page to allow users to navigate to auth pages.
+    
+
+
+    Functions:
+     Admin:
+        1. AddRestaurant - function to add restaurant.
+        2. UpdateRestaurant - function to update restaurant information.
+        3. DeleteRestaurant - function to delete restaurant.
+
+    Components:
+    1. Home - component with home page information.
+    2. Register - component to get user information.
+    3. Login - component to log in.
+
+    Admin:
+    1. CreateRestaurant - component to enter restaurant information.
+    2. Main - displays restaurant on page.
+    3. UpdateRestaurant - component to update restaurant information.
+
+    
