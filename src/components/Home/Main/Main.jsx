@@ -210,7 +210,7 @@ function Main() {
               alignItems: "center",
             }}
           >
-            No restaurant informationto show
+            No restaurant information to show
           </div>
         )}
       </div>
