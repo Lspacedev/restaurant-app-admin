@@ -1132,8 +1132,7 @@ select {
     flex-direction: column;
     gap: 5px;
   }
-  .SideNav {
-  }
+
   .sideNavLink {
     margin: 15px 0px;
   }
