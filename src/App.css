@@ -443,19 +443,29 @@ select {
   width: 80%;
   padding: 20px;
   background-color: rgb(216, 216, 216);
-  border-radius: 15px;
+  border-radius: 7px;
 }
 .v-btn {
-  text-align: end;
-  margin: 15px;
+  margin: 15px 0px;
 }
 .v-btn button {
   border: none;
   padding: 5px 10px;
   color: white;
-  background-color: rgb(241, 41, 74);
   margin: 0px 5px;
   cursor: pointer;
+}
+.v-btn .accept {
+  background-color: rgb(52, 141, 52);
+}
+.v-btn .reject {
+  background-color: rgb(209, 37, 37);
+}
+.v-btn .accept:hover {
+  background-color: rgb(44, 100, 44);
+}
+.v-btn .reject:hover {
+  background-color: rgb(155, 42, 42);
 }
 .ReservationCard p {
   margin: 0px;
@@ -471,12 +481,17 @@ select {
   flex-direction: row;
 
   align-items: center;
+  gap: 15px;
 }
+
 .checkin-out div {
   margin: 0px;
 }
 .status-date div {
   margin: 0px;
+}
+.status-value {
+  text-transform: capitalize;
 }
 
 .History {
@@ -1098,21 +1113,40 @@ select {
     order: 3;
     align-items: center;
   }
+  .Profile {
+    order: 3;
+
+    text-align: center;
+    width: 95%;
+    margin: 15px auto;
+  }
   .Reservations {
     order: 3;
-    flex-direction: column;
+    width: 95%;
+    margin: 15px auto;
   }
   .History {
     order: 3;
     flex-direction: column;
     padding: 0px;
     text-align: center;
+    width: 95%;
+    margin: 15px auto;
+  }
+  .History .notifications {
+    width: 95%;
   }
   .Reviews {
     order: 3;
     flex-direction: column;
+
+    width: 95%;
+    margin: 15px auto;
   }
+
   .ReviewCard {
+    width: calc(95% - 10px);
+    padding: 5px;
     flex-direction: column;
   }
   .review-text {
@@ -1132,10 +1166,16 @@ select {
     flex-direction: column;
     gap: 5px;
   }
-
+  .side-nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
   .sideNavLink {
+    flex: 1;
     margin: 15px 0px;
   }
+
   .profile-pic {
     width: 100%;
   }
@@ -1150,6 +1190,15 @@ select {
     flex-direction: column;
     align-items: center;
   }
+  .notifications {
+    width: 95%;
+    justify-items: center;
+  }
+
+  .notification {
+    width: calc(100% - 50px);
+  }
+
   .UpdateRestaurant {
     width: calc(100% - 60px);
     padding: 50px 20px;
@@ -1191,6 +1240,15 @@ select {
 @media (min-width: 1281px) and (max-width: 1440px) {
   .add-update-restaurant {
     margin: 25px 0px 25px 0px;
+  }
+}
+@media (max-width: 1024px) {
+  .side-nav-links {
+    flex-direction: column;
+  }
+  .sideNavLink {
+    flex: 1;
+    margin: 15px 0px;
   }
 }
 @media (max-width: 768px) {
@@ -1262,5 +1320,19 @@ select {
     padding: 45px 10px;
     width: 80%;
     background-color: #0f0f09;
+  }
+  .Reservations {
+    flex-direction: column;
+    align-items: center;
+  }
+  .reservations-div {
+    margin: 15px 25px;
+    width: calc(100% - 50px);
+  }
+  .Reservations h5 {
+    background-color: rgb(70, 70, 70);
+    padding: 15px 50px;
+    margin: 15px 0px;
+    border-radius: 50px;
   }
 }

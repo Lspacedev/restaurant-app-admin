@@ -59,7 +59,6 @@ function ReservationCard({ booking }) {
       setLoading(false);
     }
   }
-
   return (
     <div className="ReservationCard">
       {loading ? (
@@ -85,12 +84,16 @@ function ReservationCard({ booking }) {
           <div className="status-date">
             <div>
               <p>Status</p>
-              <p>{booking.status}</p>
+              <p className="status-value">{booking.status}</p>
             </div>
           </div>
           <div className="v-btn">
-            <button onClick={accept}>Accept</button>
-            <button onClick={reject}>Reject</button>
+            <button onClick={accept} className="accept">
+              Accept
+            </button>
+            <button onClick={reject} className="reject">
+              Reject
+            </button>
           </div>
         </>
       )}

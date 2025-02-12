@@ -67,28 +67,30 @@ function SideNav() {
           <p>{user && user.surname}</p>
         </div>
       </div>
-      <div className="sideNavLink" onClick={goToHome}>
-        <MdHomeFilled color="#e6e8e6" size="2.5rem" className="icon" />
-        <div>Home</div>
-      </div>
-      <div className="sideNavLink" onClick={goToReservations}>
-        <LuReceiptText color="#e6e8e6" size="2.5rem" className="icon" />
+      <div className="side-nav-links">
+        <div className="sideNavLink" onClick={goToHome}>
+          <MdHomeFilled color="#e6e8e6" size="2.5rem" className="icon" />
+          <div>Home</div>
+        </div>
+        <div className="sideNavLink" onClick={goToReservations}>
+          <LuReceiptText color="#e6e8e6" size="2.5rem" className="icon" />
 
-        <div>Reservations</div>
-      </div>
-      <div className="sideNavLink" onClick={goToReviews}>
-        <GoChecklist color="#e6e8e6" size="2.5rem" className="icon" />
+          <div>Reservations</div>
+        </div>
+        <div className="sideNavLink" onClick={goToReviews}>
+          <GoChecklist color="#e6e8e6" size="2.5rem" className="icon" />
 
-        <div>Reviews</div>
-      </div>
-      <div className="sideNavLink" onClick={goToHistory}>
-        <FaHistory color="#e6e8e6" size="2.5rem" className="icon" />
-        <div>History</div>
-      </div>
+          <div>Reviews</div>
+        </div>
+        <div className="sideNavLink" onClick={goToHistory}>
+          <FaHistory color="#e6e8e6" size="2.5rem" className="icon" />
+          <div>History</div>
+        </div>
 
-      <div className="sideNavLink logout" onClick={logout}>
-        <MdPermIdentity color="#e6e8e6" size="2.5rem" className="icon" />
-        <div>Logout</div>
+        <div className="sideNavLink logout" onClick={logout}>
+          <MdPermIdentity color="#e6e8e6" size="2.5rem" className="icon" />
+          <div>Logout</div>
+        </div>
       </div>
     </div>
   );

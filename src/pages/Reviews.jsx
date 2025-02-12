@@ -24,7 +24,6 @@ function Reviews() {
         }
       );
       const data = await res.json();
-      console.log({ data });
       if (res.ok === true) {
         setReviews(data.reviews);
       }
