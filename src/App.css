@@ -901,7 +901,7 @@ select {
 .Register .form {
   margin: 0px auto;
   padding: 45px 10px;
-  width: 30%;
+  width: 40%;
   background-color: #0f0f09;
   border-radius: 20px;
 }
@@ -989,7 +989,7 @@ select {
 .Login .form {
   margin: 0px auto;
   padding: 45px 10px;
-  width: 30%;
+  width: 40%;
   background-color: #0f0f09;
   border-radius: 20px;
 }
@@ -1249,6 +1249,13 @@ select {
   .sideNavLink {
     flex: 1;
     margin: 15px 0px;
+  }
+
+  .Register .form {
+    width: 60%;
+  }
+  .Login .form {
+    width: 60%;
   }
 }
 @media (max-width: 768px) {
